@@ -84,7 +84,10 @@ namespace UI
         private void openMemoryGameForm()
         {
             this.Hide();
-            MemoryGameForm memoryGameForm = new MemoryGameForm();
+            string sizeString = string.Format("{0}{1}", sizeOptionsButton.Text[0], sizeOptionsButton.Text[4]);
+            int size = int.Parse(sizeString);
+
+            MemoryGameForm memoryGameForm = new MemoryGameForm(size / 10, size % 10);
             memoryGameForm.ShowDialog();
         }
     }

@@ -71,6 +71,7 @@ namespace UI
             this.Controls.Add(this.currentPlayerLabel);
             this.Name = "MemoryGameForm";
             this.Text = "Memory Game";
+            this.Load += new System.EventHandler(this.MemoryGameForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,3 +8,13 @@ D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.csproj.CoreCompileI
 D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.exe
 D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.pdb
 D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.MemoryGameForm.resources
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\bin\Debug\UI.exe.config
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\bin\Debug\UI.exe
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\bin\Debug\UI.pdb
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.MemoryGameForm.resources
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.PreferencesForm.resources
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.exe
+C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\UI\obj\Debug\UI.pdb

@@ -140,7 +140,7 @@ namespace Logic
                     {
                         flippedBlockID.Add((randomRow * 10) + randomColumn);
                         io_GameBoard.FlipOrUnflipBlock(flippedBlockID[numOfFlips], true);
-                        UI.PrintMatrix(numOfRows, numOfColumns);
+                        //UI.PrintMatrix(numOfRows, numOfColumns);
                         System.Threading.Thread.Sleep(2000);
                         UpdateAIDictionary(flippedBlockID[0], io_GameBoard.GetMatrixGameBoard()[randomRow, randomColumn]);
                         numOfFlips++;
@@ -153,10 +153,10 @@ namespace Logic
                     flippedBlockID.Add(secondAIPairBlockID);
                     System.Threading.Thread.Sleep(2000);
                     io_GameBoard.FlipOrUnflipBlock(flippedBlockID[0], true);
-                    UI.PrintMatrix(numOfRows, numOfColumns);
+                    //UI.PrintMatrix(numOfRows, numOfColumns);
                     System.Threading.Thread.Sleep(2000);
                     io_GameBoard.FlipOrUnflipBlock(flippedBlockID[1], true);
-                    UI.PrintMatrix(numOfRows, numOfColumns);
+                    //UI.PrintMatrix(numOfRows, numOfColumns);
                     System.Threading.Thread.Sleep(2000);
                     numOfFlips = 2;
                 }
@@ -167,7 +167,7 @@ namespace Logic
             {
                 io_GameBoard.FlipOrUnflipBlock(flippedBlockID[0], false);
                 io_GameBoard.FlipOrUnflipBlock(flippedBlockID[1], false);
-                UI.PrintMatrix(numOfRows, numOfColumns);
+                //UI.PrintMatrix(numOfRows, numOfColumns);
 
                 isComputerTurn = false;
             }
@@ -213,6 +213,7 @@ namespace Logic
             }
 
             resultOutput.Append(string.Format("The scores are: {0}- {1}, {2}- {3}{4}", firstPlayerName, firstPlayerScore, secondPlayerName, secondPlayerScore, Environment.NewLine));
+            InitiateAIDictionary();
 
             return resultOutput;
         }
