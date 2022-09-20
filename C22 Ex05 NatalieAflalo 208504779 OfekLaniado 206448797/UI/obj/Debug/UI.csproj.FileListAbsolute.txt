@@ -1,0 +1,10 @@
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\bin\Debug\UI.exe.config
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\bin\Debug\UI.exe
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\bin\Debug\UI.pdb
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.PreferencesForm.resources
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.csproj.GenerateResource.cache
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.exe
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.pdb
+D:\C22 Ex05 Natalie 208504779 Ofek 206448797\UI\obj\Debug\UI.MemoryGameForm.resources
