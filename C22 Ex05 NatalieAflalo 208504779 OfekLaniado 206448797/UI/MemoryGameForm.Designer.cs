@@ -46,6 +46,7 @@ namespace UI
             // firstPlayerScoreLabel
             // 
             this.firstPlayerScoreLabel.AutoSize = true;
+            this.firstPlayerScoreLabel.BackColor = System.Drawing.Color.LightGreen;
             this.firstPlayerScoreLabel.Location = new System.Drawing.Point(23, 371);
             this.firstPlayerScoreLabel.Name = "firstPlayerScoreLabel";
             this.firstPlayerScoreLabel.Size = new System.Drawing.Size(45, 13);
@@ -55,6 +56,7 @@ namespace UI
             // secondPlayerScoreLabel
             // 
             this.secondPlayerScoreLabel.AutoSize = true;
+            this.secondPlayerScoreLabel.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.secondPlayerScoreLabel.Location = new System.Drawing.Point(23, 402);
             this.secondPlayerScoreLabel.Name = "secondPlayerScoreLabel";
             this.secondPlayerScoreLabel.Size = new System.Drawing.Size(45, 13);

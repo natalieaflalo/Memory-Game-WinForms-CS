@@ -10,14 +10,14 @@
             m_PlayerName = i_Name;
         }
 
-        public string GetName()
+        public string GetName 
         {
-            return m_PlayerName;
+            get { return this.m_PlayerName; } 
         }
 
-        public int GetScore()
+        public int GetScore 
         {
-            return m_AmountOfPairsFound;
+            get { return m_AmountOfPairsFound; }
         }
 
         public void UpdateScore()

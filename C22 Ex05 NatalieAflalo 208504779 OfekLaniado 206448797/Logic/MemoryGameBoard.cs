@@ -21,6 +21,31 @@ namespace Logic
             createRandomMatrix();
         }
 
+        public int NumberOfRows
+        {
+            get { return m_NumOfRows; }
+        }
+
+        public int NumberOfColumns
+        {
+            get { return m_NumOfColumns; }
+        }
+
+        public char[,] MatrixGameBoard
+        {
+            get { return r_MatrixGameBoard; }
+        }
+
+        public bool[,] MatrixFlippedBlocks
+        {
+            get { return r_FlippedBlocksMatrix; }
+        }
+
+        public bool IsAllBlocksFlipped
+        {
+            get { return m_IsAllBlocksFlipped; }
+        }
+
         private void createRandomMatrix()
         {
             int counterOfCorrectValuesInMatrix = 0;
@@ -46,26 +71,6 @@ namespace Logic
             }
         }
 
-        public int GetNumberOfRows()
-        {
-            return m_NumOfRows;
-        }
-
-        public int GetNumberOfColumns()
-        {
-            return m_NumOfColumns;
-        }
-
-        public char[,] GetMatrixGameBoard()
-        {
-            return r_MatrixGameBoard;
-        }
-
-        public bool[,] GetMatrixFlippedBlocks()
-        {
-            return r_FlippedBlocksMatrix;
-        }
-
         public void FlipOrUnflipBlock(int i_MatrixIndex, bool i_IsFlip)
         {
             r_FlippedBlocksMatrix[i_MatrixIndex / 10, i_MatrixIndex % 10] = i_IsFlip;
@@ -86,11 +91,6 @@ namespace Logic
                     }
                 }
             }
-        }
-
-        public bool GetIsAllBlocksFlipped()
-        {
-            return m_IsAllBlocksFlipped;
         }
     }
 }

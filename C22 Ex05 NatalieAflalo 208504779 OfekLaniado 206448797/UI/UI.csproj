@@ -68,5 +68,11 @@
       <DependentUpon>PreferencesForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{ebc087f3-5ad1-49ea-ae61-e6f3a0ef1eac}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,19 +16,19 @@ namespace Logic
             s_SecondPlayer = new Player(i_SecondName);
         }
 
+        public static Player FirstPlayer
+        {
+            get { return s_FirstPlayer; }
+        }
+
+        public static Player SecondPlayer
+        {
+            get { return s_SecondPlayer; }
+        }
+
         public static void InitiateAIDictionary()
         {
             s_AIMemoryDict = new Dictionary<int, char>();
-        }
-
-        public static Player GetFirstPlayer()
-        {
-            return s_FirstPlayer;
-        }
-
-        public static Player GetSecondPlayer()
-        {
-            return s_SecondPlayer;
         }
 
         public static void UpdateAIDictionary(int i_BlockID, char i_ValueInMatrix)
@@ -126,8 +126,8 @@ namespace Logic
             int secondAIPairBlockID;
             List<int> flippedBlockID = new List<int>();
             int numOfFlips = 0;
-            int numOfRows = io_GameBoard.GetNumberOfRows();
-            int numOfColumns = io_GameBoard.GetNumberOfColumns();
+            int numOfRows = io_GameBoard.NumberOfRows;
+            int numOfColumns = io_GameBoard.NumberOfColumns;
             bool isComputerTurn;
 
             do
@@ -142,7 +142,7 @@ namespace Logic
                         io_GameBoard.FlipOrUnflipBlock(flippedBlockID[numOfFlips], true);
                         //UI.PrintMatrix(numOfRows, numOfColumns);
                         System.Threading.Thread.Sleep(2000);
-                        UpdateAIDictionary(flippedBlockID[0], io_GameBoard.GetMatrixGameBoard()[randomRow, randomColumn]);
+                        UpdateAIDictionary(flippedBlockID[0], io_GameBoard.MatrixGameBoard[randomRow, randomColumn]);
                         numOfFlips++;
                     }
                 }
@@ -183,21 +183,21 @@ namespace Logic
 
         public static bool IsGoodPair(MemoryGameBoard i_GameBoard, int i_FirstBlockID, int i_SecondBlockID)
         {
-            return i_GameBoard.GetMatrixGameBoard()[i_FirstBlockID / 10, i_FirstBlockID % 10] == i_GameBoard.GetMatrixGameBoard()[i_SecondBlockID / 10, i_SecondBlockID % 10];
+            return i_GameBoard.MatrixGameBoard[i_FirstBlockID / 10, i_FirstBlockID % 10] == i_GameBoard.MatrixGameBoard[i_SecondBlockID / 10, i_SecondBlockID % 10];
         }
 
         public static bool IsAnUnflippedBlock(ref MemoryGameBoard io_GameBoard, int i_BlockID)
         {
-            return !io_GameBoard.GetMatrixFlippedBlocks()[i_BlockID / 10, i_BlockID % 10];
+            return !io_GameBoard.MatrixFlippedBlocks[i_BlockID / 10, i_BlockID % 10];
         }
 
         public static StringBuilder GetGameResult()
         {
             StringBuilder resultOutput = new StringBuilder();
-            string firstPlayerName = s_FirstPlayer.GetName();
-            string secondPlayerName = s_SecondPlayer.GetName();
-            int firstPlayerScore = s_FirstPlayer.GetScore();
-            int secondPlayerScore = s_SecondPlayer.GetScore();
+            string firstPlayerName = s_FirstPlayer.GetName;
+            string secondPlayerName = s_SecondPlayer.GetName;
+            int firstPlayerScore = s_FirstPlayer.GetScore;
+            int secondPlayerScore = s_SecondPlayer.GetScore;
 
             if (firstPlayerScore > secondPlayerScore)
             {

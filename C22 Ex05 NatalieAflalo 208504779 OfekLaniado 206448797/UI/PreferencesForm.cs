@@ -86,8 +86,10 @@ namespace UI
             this.Hide();
             string sizeString = string.Format("{0}{1}", sizeOptionsButton.Text[0], sizeOptionsButton.Text[4]);
             int size = int.Parse(sizeString);
+            bool isPlayingAgainstComputer = !secondPlayerNameTextBox.Enabled;
+            string secondPlayerName = isPlayingAgainstComputer ? "Computer" : secondPlayerNameTextBox.Text;
 
-            MemoryGameForm memoryGameForm = new MemoryGameForm(size / 10, size % 10);
+            MemoryGameForm memoryGameForm = new MemoryGameForm(size / 10, size % 10, firstPlayerNameTextBox.Text, secondPlayerName);
             memoryGameForm.ShowDialog();
         }
     }
