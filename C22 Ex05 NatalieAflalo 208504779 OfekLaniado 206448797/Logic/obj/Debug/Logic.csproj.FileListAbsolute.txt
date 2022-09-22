@@ -1,7 +1,0 @@
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\bin\Debug\Logic.dll.config
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\bin\Debug\Logic.dll
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\bin\Debug\Logic.pdb
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\obj\Debug\Logic.dll
-C:\Users\natal\repos\Memory-Game-WinForms-CS\C22 Ex05 NatalieAflalo 208504779 OfekLaniado 206448797\Logic\obj\Debug\Logic.pdb
