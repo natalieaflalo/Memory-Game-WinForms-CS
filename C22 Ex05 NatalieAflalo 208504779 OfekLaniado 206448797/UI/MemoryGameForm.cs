@@ -11,7 +11,7 @@ namespace UI
         private readonly int r_RowsAmount;
         private readonly int r_ColumnsAmount;
         private readonly Button[,] r_ButtonMatrix;
-        private readonly MemoryGameBoard r_memoryGameBoard;
+        private readonly MemoryGameBoard r_MemoryGameBoard;
         private bool m_IsFirstPlayerTurn = true;
 
         public int RowsAmount { get => this.r_RowsAmount; }
@@ -23,7 +23,7 @@ namespace UI
             r_RowsAmount = i_RowsAmount;
             r_ColumnsAmount = i_ColumnsAmount;
             r_ButtonMatrix = new Button[r_RowsAmount, r_ColumnsAmount];
-            r_memoryGameBoard = new MemoryGameBoard(r_RowsAmount, r_ColumnsAmount);
+            r_MemoryGameBoard = new MemoryGameBoard(r_RowsAmount, r_ColumnsAmount);
             i_FirstPlayerName = i_FirstPlayerName == string.Empty ? "Player 1" : i_FirstPlayerName;
             i_SecondPlayerName = i_SecondPlayerName == string.Empty ? "Player 2" : i_SecondPlayerName;
             LogicForUI.CreatePlayers(i_FirstPlayerName, i_SecondPlayerName);
@@ -31,11 +31,16 @@ namespace UI
             firstPlayerScoreLabel.Text = updatePlayerLabel(i_FirstPlayerName, 0);
             secondPlayerScoreLabel.Text = updatePlayerLabel(i_SecondPlayerName, 0);
             updateCurrentPlayerLabel(firstPlayerScoreLabel.BackColor, i_FirstPlayerName);
+            //r_memoryGameBoard.FlipOrUnflipBlock(11, true);
+            //if(r_memoryGameBoard.IsAllBlocksFlipped)
+            //{
+            //    finishGame();
+            //}
         }
 
         private void MemoryGameForm_Load(object sender, EventArgs e)
         {
-            char[,] randomMatrix = r_memoryGameBoard.MatrixGameBoard;
+            char[,] randomMatrix = r_MemoryGameBoard.MatrixGameBoard;
 
             for (int i = 0; i < r_RowsAmount; i++)
             {
@@ -58,7 +63,7 @@ namespace UI
             ClientSize = new Size(r_ColumnsAmount * 100 + 20, secondPlayerScoreLabel.Location.Y + 30);
         }
 
-        private void turnManager()
+        private void turnManager(Button i_MemoryCard)
         {
 
             if(m_IsFirstPlayerTurn)
@@ -75,6 +80,10 @@ namespace UI
                 {
                     playerTurn(LogicForUI.SecondPlayer);
                 }
+            }
+            if(r_MemoryGameBoard.IsAllBlocksFlipped)
+            {
+                finishGame();
             }
         }
 
@@ -93,6 +102,7 @@ namespace UI
             {
                 secondPlayerScoreLabel.Text = updatePlayerLabel(i_Player.GetName, i_Player.GetScore);
             }
+
         }
 
         private void computerTurn(Player i_ComputerPlayer)
@@ -110,15 +120,13 @@ namespace UI
         {
             Button memoryCard = sender as Button;
 
-            if(memoryCard.Text == memoryCard.Tag.ToString())
-            {
-                unflipMemoryCardButton(memoryCard);
-            }
-            else
+            turnManager(memoryCard);
+           
             {
                 memoryCard.Text = memoryCard.Tag.ToString();
                 memoryCard.BackColor = m_IsFirstPlayerTurn ? Color.LightGreen : Color.MediumSlateBlue;
             }
+            
         }
 
         private void unflipMemoryCardButton(Button i_MemoryCard)
@@ -127,22 +135,25 @@ namespace UI
             i_MemoryCard.BackColor = DefaultBackColor;
         }
 
-        private void MemoryGameForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void finishGame()
         {
             const string caption = "Game Over!";
             StringBuilder message = new StringBuilder();
+
             message.Append(LogicForUI.GetGameResult());
             message.Append("Would you like to play another game?");
-            var result = MessageBox.Show(message.ToString(), caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message.ToString(), caption, buttons);
             if (result == DialogResult.No)
             {
-                e.Cancel = true;
+                this.Close();
             }
             else
             {
-                MemoryGameForm_Load(sender, e);
+                //method to initiate another game
             }
         }
     }

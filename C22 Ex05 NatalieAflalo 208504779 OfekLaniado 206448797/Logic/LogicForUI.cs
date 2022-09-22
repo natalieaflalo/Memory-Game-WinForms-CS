@@ -212,7 +212,7 @@ namespace Logic
                 resultOutput.Append(string.Format("Tie! {0}", Environment.NewLine));
             }
 
-            resultOutput.Append(string.Format("The scores are: {0}- {1}, {2}- {3}{4}", firstPlayerName, firstPlayerScore, secondPlayerName, secondPlayerScore, Environment.NewLine));
+            resultOutput.Append(string.Format("The scores are: {0} - {1}, {2} - {3}{4}", firstPlayerName, firstPlayerScore, secondPlayerName, secondPlayerScore, Environment.NewLine));
             InitiateAIDictionary();
 
             return resultOutput;
