@@ -49,11 +49,13 @@ namespace UI
             {
                 secondPlayerNameTextBox.Enabled = true;
                 secondPlayerSettings.Text = "Against Computer";
+                secondPlayerNameTextBox.Text = string.Empty;
             }
             else
             {
                 secondPlayerNameTextBox.Enabled = false;
                 secondPlayerSettings.Text = "Against A Friend";
+                secondPlayerNameTextBox.Text = "- computer -";
             }
         }
 

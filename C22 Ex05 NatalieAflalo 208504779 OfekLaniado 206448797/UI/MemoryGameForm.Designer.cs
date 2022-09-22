@@ -39,9 +39,8 @@ namespace UI
             this.currentPlayerLabel.AutoSize = true;
             this.currentPlayerLabel.Location = new System.Drawing.Point(23, 339);
             this.currentPlayerLabel.Name = "currentPlayerLabel";
-            this.currentPlayerLabel.Size = new System.Drawing.Size(76, 13);
+            this.currentPlayerLabel.Size = new System.Drawing.Size(0, 13);
             this.currentPlayerLabel.TabIndex = 0;
-            this.currentPlayerLabel.Text = "Current Player:";
             // 
             // firstPlayerScoreLabel
             // 
