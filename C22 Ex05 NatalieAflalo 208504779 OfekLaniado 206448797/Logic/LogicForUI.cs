@@ -55,6 +55,8 @@ namespace Logic
         public static bool IsFindAIPair(out int o_FirstBlockID, out int o_SecondBlockID)
         {
             bool isFindAIPair = false;
+            o_FirstBlockID = -1;
+            o_SecondBlockID = -1;
 
             foreach (KeyValuePair<int, char> firstBlockFromMemory in s_AIMemoryDict)
             {
@@ -73,62 +75,22 @@ namespace Logic
                 }
             }
 
-            o_FirstBlockID = -1;
-            o_SecondBlockID = -1;
-
             return isFindAIPair;
         }
 
-        public static bool IsLegalSizeOfMatrix(char i_CharRows, char i_CharColumns, ref int io_NumberOfRows, ref int io_NumberOfColumns, out eValidationOption o_ValidationCode)
-        {
-            bool isLegal = false;
-
-            if (int.TryParse(i_CharRows.ToString(), out io_NumberOfRows) && int.TryParse(i_CharColumns.ToString(), out io_NumberOfColumns))
-            {
-                if (io_NumberOfRows <= 6 && io_NumberOfColumns <= 6)
-                {
-                    if (io_NumberOfRows >= 4 && io_NumberOfColumns >= 4)
-                    {
-                        if ((io_NumberOfRows * io_NumberOfColumns) % 2 == 0)
-                        {
-                            isLegal = true;
-                            o_ValidationCode = eValidationOption.Valid;
-                        }
-                        else
-                        {
-                            o_ValidationCode = eValidationOption.OddNumber;
-                        }
-                    }
-                    else
-                    {
-                        o_ValidationCode = eValidationOption.BoardTooSmall;
-                    }
-                }
-                else
-                {
-                    o_ValidationCode = eValidationOption.BoardTooBig;
-                }
-            }
-            else
-            {
-                o_ValidationCode = eValidationOption.NotANumber;
-            }
-
-            return isLegal;
-        }
-
-        public static bool ComputerTurn(ref MemoryGameBoard io_GameBoard)
+        public static bool ComputerTurn(ref MemoryGameBoard io_GameBoard, out List<int> io_FlippedBlockID)
         {
             Random randomIndexNumber = new Random();
             int randomRow;
             int randomColumn;
             int firstAIPairBlockID;
             int secondAIPairBlockID;
-            List<int> flippedBlockID = new List<int>();
             int numOfFlips = 0;
             int numOfRows = io_GameBoard.NumberOfRows;
             int numOfColumns = io_GameBoard.NumberOfColumns;
             bool isComputerTurn;
+
+            io_FlippedBlockID = new List<int>();
 
             do
             {
@@ -138,43 +100,35 @@ namespace Logic
                     randomColumn = randomIndexNumber.Next(numOfColumns);
                     if (IsAnUnflippedBlock(ref io_GameBoard, (randomRow * 10) + randomColumn))
                     {
-                        flippedBlockID.Add((randomRow * 10) + randomColumn);
-                        io_GameBoard.FlipOrUnflipBlock(flippedBlockID[numOfFlips], true);
-                        //UI.PrintMatrix(numOfRows, numOfColumns);
-                        System.Threading.Thread.Sleep(2000);
-                        UpdateAIDictionary(flippedBlockID[0], io_GameBoard.MatrixGameBoard[randomRow, randomColumn]);
+                        io_FlippedBlockID.Add((randomRow * 10) + randomColumn);
+                        io_GameBoard.FlipOrUnflipBlock(io_FlippedBlockID[numOfFlips], true);
+                        UpdateAIDictionary(io_FlippedBlockID[0], io_GameBoard.MatrixGameBoard[randomRow, randomColumn]);
                         numOfFlips++;
                     }
                 }
                 else
                 {
-                    flippedBlockID.Clear();
-                    flippedBlockID.Add(firstAIPairBlockID);
-                    flippedBlockID.Add(secondAIPairBlockID);
-                    System.Threading.Thread.Sleep(2000);
-                    io_GameBoard.FlipOrUnflipBlock(flippedBlockID[0], true);
-                    //UI.PrintMatrix(numOfRows, numOfColumns);
-                    System.Threading.Thread.Sleep(2000);
-                    io_GameBoard.FlipOrUnflipBlock(flippedBlockID[1], true);
-                    //UI.PrintMatrix(numOfRows, numOfColumns);
-                    System.Threading.Thread.Sleep(2000);
+                    io_FlippedBlockID.Clear();
+                    io_FlippedBlockID.Add(firstAIPairBlockID);
+                    io_FlippedBlockID.Add(secondAIPairBlockID);
+                    io_GameBoard.FlipOrUnflipBlock(io_FlippedBlockID[0], true);
+                    io_GameBoard.FlipOrUnflipBlock(io_FlippedBlockID[1], true);
                     numOfFlips = 2;
                 }
             }
             while (numOfFlips < 2);
 
-            if (!IsGoodPair(io_GameBoard, flippedBlockID[0], flippedBlockID[1]))
+            if (!IsGoodPair(io_GameBoard, io_FlippedBlockID[0], io_FlippedBlockID[1]))
             {
-                io_GameBoard.FlipOrUnflipBlock(flippedBlockID[0], false);
-                io_GameBoard.FlipOrUnflipBlock(flippedBlockID[1], false);
-                //UI.PrintMatrix(numOfRows, numOfColumns);
+                io_GameBoard.FlipOrUnflipBlock(io_FlippedBlockID[0], false);
+                io_GameBoard.FlipOrUnflipBlock(io_FlippedBlockID[1], false);
 
                 isComputerTurn = false;
             }
             else
             {
-                ClearFlippedPairFromAIMatrix(flippedBlockID[0], flippedBlockID[1]);
-
+                ClearFlippedPairFromAIMatrix(io_FlippedBlockID[0], io_FlippedBlockID[1]);
+                s_SecondPlayer.UpdateScore();
                 isComputerTurn = true;
             }
 
@@ -214,6 +168,7 @@ namespace Logic
 
             resultOutput.Append(string.Format("The scores are: {0} - {1}, {2} - {3}{4}", firstPlayerName, firstPlayerScore, secondPlayerName, secondPlayerScore, Environment.NewLine));
             InitiateAIDictionary();
+            CreatePlayers(firstPlayerName, secondPlayerName);
 
             return resultOutput;
         }
