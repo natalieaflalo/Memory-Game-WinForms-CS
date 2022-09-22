@@ -1,7 +1,6 @@
-﻿
-namespace UI
+﻿namespace UI
 {
-    partial class MemoryGameForm
+    public partial class MemoryGameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -18,6 +17,7 @@ namespace UI
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

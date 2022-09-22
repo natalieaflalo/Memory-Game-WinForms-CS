@@ -12,10 +12,10 @@ namespace UI
         private readonly int r_RowsAmount;
         private readonly int r_ColumnsAmount;
         private readonly Button[,] r_ButtonMatrix;
-        private MemoryGameBoard m_MemoryGameBoard;
-        private bool m_IsFirstPlayerTurn = true;
         private readonly bool r_IsPlayingAgainstComputer;
         private readonly List<Button> r_PlayerTurnButtons;
+        private MemoryGameBoard m_MemoryGameBoard;
+        private bool m_IsFirstPlayerTurn = true;
 
         public int RowsAmount { get => this.r_RowsAmount; }
 
@@ -50,7 +50,7 @@ namespace UI
                     Button memoryCardButton = new Button();
 
                     memoryCardButton.Size = new Size(90, 90);
-                    memoryCardButton.Location = new Point(15 + j * 100, 15 + i * 100);
+                    memoryCardButton.Location = new Point(15 + (j * 100), 15 + (i * 100));
                     memoryCardButton.Tag = randomMatrix[i, j];
                     memoryCardButton.Click += new EventHandler(memoryCardButton_Click);
                     Controls.Add(memoryCardButton);
@@ -58,10 +58,10 @@ namespace UI
                 }
             }
 
-            currentPlayerLabel.Location = new Point(15,20+ r_RowsAmount*100);
+            currentPlayerLabel.Location = new Point(15, 20 + (r_RowsAmount * 100));
             firstPlayerScoreLabel.Location = new Point(15, currentPlayerLabel.Location.Y + 25);
             secondPlayerScoreLabel.Location = new Point(15, firstPlayerScoreLabel.Location.Y + 25);
-            ClientSize = new Size(r_ColumnsAmount * 100 + 20, secondPlayerScoreLabel.Location.Y + 30);
+            ClientSize = new Size((r_ColumnsAmount * 100) + 20, secondPlayerScoreLabel.Location.Y + 30);
         }
 
         private void initiateAnotherGame()
@@ -172,6 +172,7 @@ namespace UI
                     flipMemoryCardButton(r_ButtonMatrix[cardID / 10, cardID % 10], secondPlayerScoreLabel.BackColor);
                     wait(1000);
                 }
+
                 secondPlayerScoreLabel.Text = updatePlayerLabel(i_ComputerPlayer.GetName, i_ComputerPlayer.GetScore);
             }
 
@@ -204,7 +205,9 @@ namespace UI
                 for (int j = 0; j < r_ColumnsAmount; ++j)
                 {
                     if (r_ButtonMatrix[i, j].Equals(i_ButtonToFind))
-                        indexResult = i * 10 + j;
+                    { 
+                        indexResult = (i * 10) + j;
+                    }
                 }
             }
 

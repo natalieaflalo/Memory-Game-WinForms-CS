@@ -4,11 +4,11 @@ namespace Logic
 {
     public class MemoryGameBoard
     {
-        private int m_NumOfColumns;
-        private int m_NumOfRows;
         private readonly char[,] r_MatrixGameBoard;
         private readonly bool[,] r_FlippedBlocksMatrix;
         private readonly int[] r_RandomLettersCounter;
+        private int m_NumOfColumns;
+        private int m_NumOfRows;
         private bool m_IsAllBlocksFlipped;
 
         public MemoryGameBoard(int i_InputRows, int i_InputColumns)
