@@ -70,7 +70,11 @@ namespace UI
             this.Controls.Add(this.secondPlayerScoreLabel);
             this.Controls.Add(this.firstPlayerScoreLabel);
             this.Controls.Add(this.currentPlayerLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MemoryGameForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Memory Game";
             this.Load += new System.EventHandler(this.MemoryGameForm_Load);
             this.ResumeLayout(false);

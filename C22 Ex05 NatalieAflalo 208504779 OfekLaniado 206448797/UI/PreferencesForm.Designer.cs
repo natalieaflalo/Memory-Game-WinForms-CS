@@ -127,6 +127,7 @@ namespace UI
             this.Controls.Add(this.secondPlayerNameLabel);
             this.Controls.Add(this.firstPlayerNameLabel);
             this.Controls.Add(this.firstPlayerNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PreferencesForm";
