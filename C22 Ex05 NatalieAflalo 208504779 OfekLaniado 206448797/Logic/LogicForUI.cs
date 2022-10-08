@@ -131,6 +131,11 @@ namespace Logic
                 s_SecondPlayer.UpdateScore();
                 isComputerTurn = true;
             }
+            
+            if(io_GameBoard.IsAllBlocksFlipped)
+            {
+                isComputerTurn = false;
+            }
 
             return isComputerTurn;
         }

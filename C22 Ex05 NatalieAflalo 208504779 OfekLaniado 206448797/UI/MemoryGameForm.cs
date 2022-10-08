@@ -175,10 +175,12 @@ namespace UI
 
                 secondPlayerScoreLabel.Text = updatePlayerLabel(i_ComputerPlayer.GetName, i_ComputerPlayer.GetScore);
             }
-
-            foreach (int cardID in memoryCardsIDToFlip)
+            if(!m_MemoryGameBoard.IsAllBlocksFlipped)
             {
-                unflipMemoryCardButton(r_ButtonMatrix[cardID / 10, cardID % 10]);
+                foreach (int cardID in memoryCardsIDToFlip)
+                {
+                    unflipMemoryCardButton(r_ButtonMatrix[cardID / 10, cardID % 10]);
+                }
             }
             
             secondPlayerScoreLabel.Text = updatePlayerLabel(i_ComputerPlayer.GetName, i_ComputerPlayer.GetScore);
