@@ -18,6 +18,7 @@
 ## Photos
 ### Two Players:
 ![winforms two players](https://user-images.githubusercontent.com/86556267/194940149-a7c0079d-bf26-48de-940e-aeefcee8f952.png)
+
 ![winforms two players game screen](https://user-images.githubusercontent.com/86556267/194940181-8ac57de2-2c43-4157-bcb0-3f121b3bb1ce.png)
 ### Playing against the computer:
 ![winforms first screen](https://user-images.githubusercontent.com/86556267/194940296-97359057-03e8-42c5-9766-1eb0af8077bb.png)
