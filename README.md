@@ -21,6 +21,8 @@
 ![winforms two players game screen](https://user-images.githubusercontent.com/86556267/194940181-8ac57de2-2c43-4157-bcb0-3f121b3bb1ce.png)
 ### Playing against the computer:
 ![winforms first screen](https://user-images.githubusercontent.com/86556267/194940296-97359057-03e8-42c5-9766-1eb0af8077bb.png)
+
 ![winforms computer game screen](https://user-images.githubusercontent.com/86556267/194940307-5a2e3fe7-c525-4710-af1c-27a1ebb40854.png)
+
 ![winforms computer finish screen](https://user-images.githubusercontent.com/86556267/194940318-90fa30b5-e05c-4e1b-821e-485fe1c7a6ec.png)
 
